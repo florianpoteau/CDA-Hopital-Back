@@ -1,0 +1,19 @@
+version: "3.8"
+services:
+  bddmysql:
+    image: mysql:8
+    container_name: cdahopitaloflo
+    restart: always
+    environment:
+      - MYSQL_USER=user
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_PASSWORD=password
+      - MYSQL_DATABASE=hopitaloflo
+    ports:
+      - "9254:3306"
+    volumes:
+      - datahopitaloflo:/var/lib/mysql
+      - ./script.sql:/docker-entrypoint-initdb.d/script.sql
+volumes:
+  datahopitaloflo:
+    driver: local

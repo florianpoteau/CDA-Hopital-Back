@@ -2,38 +2,38 @@ CREATE DATABASE IF NOT EXISTS hopitaloflo;
 
 USE hopitaloflo;
 
-CREATE TABLE IF NOT EXISTS Bedroom(
+CREATE TABLE IF NOT EXISTS bedroom(
 id_bedroom int primary key auto_increment,
 no_bedroom int
 );
 
-CREATE TABLE IF NOT EXISTS Bed(
+CREATE TABLE IF NOT EXISTS bed(
 id_bed int primary key auto_increment,
 id_bedroom int,
-foreign key (id_bedroom) REFERENCES Bedroom(id_bedroom)
+foreign key (id_bedroom) REFERENCES bedroom(id_bedroom)
 );
 
-CREATE TABLE IF NOT EXISTS Service(
+CREATE TABLE IF NOT EXISTS service(
 id_service int primary key auto_increment,
 name_service varchar(50)
 );
 
-CREATE TABLE IF NOT EXISTS Role(
+CREATE TABLE IF NOT EXISTS role(
 id_role int primary key auto_increment,
 name_role varchar(50)
 );
 
-CREATE TABLE IF NOT EXISTS User(
+CREATE TABLE IF NOT EXISTS user(
 id_user int primary key auto_increment,
 email_user varchar(250),
 password varchar(50),
 id_role int,
-foreign key(id_role) REFERENCES Role(id_role),
+foreign key(id_role) REFERENCES role(id_role),
 id_service int,
-foreign key(id_service) REFERENCES Service(id_service)
+foreign key(id_service) REFERENCES service(id_service)
 );
 
-CREATE TABLE IF NOT EXISTS Patient(
+CREATE TABLE IF NOT EXISTS patient(
 id_patient int primary key auto_increment,
 name_patient varchar(50),
 firstname_patient varchar(50),
@@ -44,9 +44,9 @@ nosecu_patient int,
 dateArrivee_patient datetime,
 dateSortie_patient datetime,
 id_service int,
-foreign key(id_service) REFERENCES Service(id_service),
+foreign key(id_service) REFERENCES service(id_service),
 id_bed int,
-foreign key(id_bed) REFERENCES Bed(id_bed)
+foreign key(id_bed) REFERENCES bed(id_bed)
 );
 
 INSERT INTO `hopitaloflo`.`bedroom` (`id_bedroom`, `no_bedroom`) VALUES ('1', '201');
@@ -72,8 +72,12 @@ INSERT INTO `hopitaloflo`.`service` (`id_service`, `name_service`) VALUES ('2', 
 INSERT INTO `hopitaloflo`.`service` (`id_service`, `name_service`) VALUES ('3', 'Pédiatrie');
 INSERT INTO `hopitaloflo`.`service` (`id_service`, `name_service`) VALUES ('4', 'Gynécologie');
 
-INSERT INTO User (id_user, email_user, password, id_role, id_service)
+INSERT INTO user (id_user, email_user, password, id_role, id_service)
 VALUES (1, 'email@example.com', 'motdepasse', 1, NULL);
 INSERT INTO `hopitaloflo`.`user` (`id_user`, `email_user`, `password`, `id_role`, `id_service`) VALUES ('2', 'user@user.com', 'password', '2', '1');
 INSERT INTO patient (id_patient, name_patient, firstname_patient, dateBirth_patient, sexe_patient, notel_patient, nosecu_patient, dateArrivee_patient, dateSortie_patient, id_service, id_bed) 
+VALUES (1, 'Poteau', 'Florian', '2001-05-23', 'Masculin', '634536374', '1236273627', NOW(), '2024-07-21', 1, 1);
+INSERT INTO patient (id_patient, name_patient, firstname_patient, dateBirth_patient, sexe_patient, notel_patient, nosecu_patient, dateArrivee_patient, dateSortie_patient, id_service, id_bed) 
 VALUES (2, 'Bor', 'Yoan', '1875-02-24', 'Féminin', '634536374', '1236273627', NOW(), '1877-01-12', 1, 2);
+INSERT INTO patient (id_patient, name_patient, firstname_patient, dateBirth_patient, sexe_patient, notel_patient, nosecu_patient, dateArrivee_patient, dateSortie_patient, id_service, id_bed) 
+VALUES (3, 'Alexandre', 'David', '2003-01-23', 'Masculin', '634536374', '1236273627', NOW(), '2024-01-12', 1, 3);
