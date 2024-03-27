@@ -13,7 +13,7 @@ import co.simplon.cdahopitalback.business.service.PatientService;
  * Contrôleur REST pour la gestion des patients.
  */
 @RestController
-public class PatientController {
+public class ReadPatientController {
 
     private final PatientService patientService;
 
@@ -22,7 +22,7 @@ public class PatientController {
      * @param patientService Le service de gestion des patients
      */
     @Autowired
-    public PatientController(PatientService patientService) {
+    public ReadPatientController(PatientService patientService) {
         this.patientService = patientService;
     }
 
