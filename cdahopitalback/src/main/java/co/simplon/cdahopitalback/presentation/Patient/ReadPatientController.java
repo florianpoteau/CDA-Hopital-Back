@@ -1,4 +1,4 @@
-package co.simplon.cdahopitalback.presentation;
+package co.simplon.cdahopitalback.presentation.Patient;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package co.simplon.cdahopitalback.presentation;
+package co.simplon.cdahopitalback.presentation.Patient;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
