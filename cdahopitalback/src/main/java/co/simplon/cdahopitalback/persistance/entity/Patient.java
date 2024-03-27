@@ -1,6 +1,6 @@
 package co.simplon.cdahopitalback.persistance.entity;
 
-import java.sql.Date;
+import java.util.Date;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -10,6 +10,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 
 @Entity
 @Table(name = "patient")
@@ -26,7 +28,8 @@ public class Patient {
     @Column(name = "firstname_patient", length = 50)
     private String firstname;
 
-    @Column(name = "dateBirth_patient")
+    @Temporal(TemporalType.DATE)
+    @Column(name = "datebirth_patient")
     private Date datebirth;
 
     @Column(name = "sexe_patient", length = 20)
@@ -38,11 +41,13 @@ public class Patient {
     @Column(name = "nosecu_patient")
     private int nosecu;
 
-    @Column(name = "dateArrivee_patient")
-    private Date dateArrivee;
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "datearrivee_patient")
+    private Date datearrivee;
 
-    @Column(name = "dateSortie_patient")
-    private Date dateSortie;
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "datebortie_patient")
+    private Date datesortie;
 
     @ManyToOne
     @JoinColumn(name = "id_service")

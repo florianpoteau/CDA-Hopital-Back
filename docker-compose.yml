@@ -13,7 +13,7 @@ services:
       - "9254:3306"
     volumes:
       - datahopitaloflo:/var/lib/mysql
-      - ./script.sql:/docker-entrypoint-initdb.d/script.sql
+      # - ./script.sql:/docker-entrypoint-initdb.d/script.sql
 volumes:
   datahopitaloflo:
     driver: local
