@@ -22,12 +22,36 @@ public class Bed {
     @JoinColumn(name = "id_bedroom")
     private Bedroom bedroom;
 
+    @ManyToOne
+    @JoinColumn(name = "id_service")
+    private Service service;
+
+    @ManyToOne
+    @JoinColumn(name = "id_patient")
+    private Patient patient;
+
     public Bedroom getbedroom() {
         return bedroom;
     }
 
     public void setBedroom(Bedroom bedroom) {
         this.bedroom = bedroom;
+    }
+
+    public Service getService() {
+        return service;
+    }
+
+    public void setService(Service service) {
+        this.service = service;
+    }
+
+    public Patient getPatient() {
+        return patient;
+    }
+
+    public void setPatient(Patient patient) {
+        this.patient = patient;
     }
 
 }
