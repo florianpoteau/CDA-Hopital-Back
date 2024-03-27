@@ -30,6 +30,14 @@ public class Bed {
     @JoinColumn(name = "id_patient")
     private Patient patient;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public Bedroom getbedroom() {
         return bedroom;
     }

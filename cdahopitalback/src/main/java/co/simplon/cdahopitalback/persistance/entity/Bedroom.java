@@ -19,4 +19,20 @@ public class Bedroom {
     @Column(name = "no_bedroom")
     private int numeroChambre;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int geNumerobedroom() {
+        return numeroChambre;
+    }
+
+    public void setBedroom(int numeroChambre) {
+        this.numeroChambre = numeroChambre;
+    }
+
 }

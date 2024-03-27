@@ -1,11 +1,15 @@
 package co.simplon.cdahopitalback.business.dto;
 
+import co.simplon.cdahopitalback.persistance.entity.Patient;
+import co.simplon.cdahopitalback.persistance.entity.Service;
+import co.simplon.cdahopitalback.persistance.entity.Bedroom;
+
 public class BedDTO {
 
     private int id;
-    private int bedroomId;
-    private int serviceId;
-    private int patientId;
+    private Bedroom bedroomId;
+    private Service serviceId;
+    private Patient patientId;
 
     public int getId() {
         return id;
@@ -15,27 +19,27 @@ public class BedDTO {
         this.id = id;
     }
 
-    public int getBedroomId() {
+    public Bedroom getBedroomId() {
         return bedroomId;
     }
 
-    public void setBedroomId(int bedroomId) {
+    public void setBedroomId(Bedroom bedroomId) {
         this.bedroomId = bedroomId;
     }
 
-    public int getServiceId() {
+    public Service getServiceId() {
         return serviceId;
     }
 
-    public void setServiceId(int serviceId) {
+    public void setServiceId(Service serviceId) {
         this.serviceId = serviceId;
     }
 
-    public int getPatientId() {
+    public Patient getPatientId() {
         return patientId;
     }
 
-    public void setPatientId(int patientId) {
+    public void setPatientId(Patient patientId) {
         this.patientId = patientId;
     }
 }

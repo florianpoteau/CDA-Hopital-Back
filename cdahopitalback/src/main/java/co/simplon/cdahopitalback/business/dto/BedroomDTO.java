@@ -1,6 +1,6 @@
 package co.simplon.cdahopitalback.business.dto;
 
-public class Bedroom {
+public class BedroomDTO {
 
     private int id;
     private int numeroChambre;

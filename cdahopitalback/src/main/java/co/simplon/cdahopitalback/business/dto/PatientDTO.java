@@ -1,19 +1,18 @@
 package co.simplon.cdahopitalback.business.dto;
 
-import java.sql.Timestamp;
 import java.util.Date;
 
 public class PatientDTO {
 
     private int id;
     private String name;
-    private String username;
+    private String firstname;
     private Date datebirth;
     private String sexe;
     private int notel;
     private int nosecu;
-    private Timestamp datearrivee;
-    private Timestamp datesortie;
+    private Date datearrivee;
+    private Date datesortie;
 
     public int getId() {
         return id;
@@ -31,12 +30,12 @@ public class PatientDTO {
         this.name = name;
     }
 
-    public String getUsername() {
-        return username;
+    public String getFirstname() {
+        return firstname;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
     }
 
     public Date getDatebirth() {
@@ -71,19 +70,19 @@ public class PatientDTO {
         this.nosecu = nosecu;
     }
 
-    public Timestamp getDatearrivee() {
+    public Date getDatearrivee() {
         return datearrivee;
     }
 
-    public void setDatearrivee(Timestamp datearrivee) {
+    public void setDatearrivee(Date datearrivee) {
         this.datearrivee = datearrivee;
     }
 
-    public Timestamp getDatesortie() {
+    public Date getDatesortie() {
         return datesortie;
     }
 
-    public void setDatesortie(Timestamp datesortie) {
+    public void setDatesortie(Date datesortie) {
         this.datesortie = datesortie;
     }
 
