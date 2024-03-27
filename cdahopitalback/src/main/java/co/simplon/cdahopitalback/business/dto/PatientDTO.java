@@ -14,74 +14,146 @@ public class PatientDTO {
     private Date datearrivee;
     private Date datesortie;
 
+    /**
+     * 
+     * @return the id
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     * 
+     * @param id the id to set
+     */
     public void setId(int id) {
         this.id = id;
     }
 
+    /**
+     * 
+     * @return the name
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * 
+     * @param name the name to set
+     */
     public void setName(String name) {
         this.name = name;
     }
 
+    /**
+     * 
+     * @return the firstname
+     */
     public String getFirstname() {
         return firstname;
     }
 
+    /**
+     * 
+     * @param firstname the firstname to set
+     */
     public void setFirstname(String firstname) {
         this.firstname = firstname;
     }
 
+    /**
+     * 
+     * @return the birth date
+     */
     public Date getDatebirth() {
         return datebirth;
     }
 
+    /**
+     * 
+     * @param datebirth the birthdate to set
+     */
     public void setDatebirth(Date datebirth) {
         this.datebirth = datebirth;
     }
 
+    /**
+     * 
+     * @return the sexe
+     */
     public String getSexe() {
         return sexe;
     }
 
+    /**
+     * 
+     * @param sexe the sexe to set
+     */
     public void setSexe(String sexe) {
         this.sexe = sexe;
     }
 
+    /**
+     * 
+     * @return the phone number
+     */
     public int getNotel() {
         return notel;
     }
 
+    /**
+     * 
+     * @param notel the phone number to set
+     */
     public void setNotel(int notel) {
         this.notel = notel;
     }
 
+    /**
+     * 
+     * @return the social security number
+     */
     public int getNosecu() {
         return nosecu;
     }
 
+    /**
+     * 
+     * @param nosecu the social security number to set
+     */
     public void setNosecu(int nosecu) {
         this.nosecu = nosecu;
     }
 
+    /**
+     * 
+     * @return Date of arrival
+     */
     public Date getDatearrivee() {
         return datearrivee;
     }
 
+    /**
+     * 
+     * @param datearrivee Date of arrival to set
+     */
     public void setDatearrivee(Date datearrivee) {
         this.datearrivee = datearrivee;
     }
 
+    /**
+     * 
+     * @return the release date
+     */
     public Date getDatesortie() {
         return datesortie;
     }
 
+    /**
+     * 
+     * @param datesortie the release date to set
+     */
     public void setDatesortie(Date datesortie) {
         this.datesortie = datesortie;
     }

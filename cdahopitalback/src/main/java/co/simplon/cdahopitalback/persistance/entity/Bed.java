@@ -30,34 +30,66 @@ public class Bed {
     @JoinColumn(name = "id_patient")
     private Patient patient;
 
+    /**
+     * 
+     * @return the id
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     * 
+     * @param id the id to set
+     */
     public void setId(int id) {
         this.id = id;
     }
 
+    /**
+     * 
+     * @return the bedroom
+     */
     public Bedroom getbedroom() {
         return bedroom;
     }
 
+    /**
+     * 
+     * @param bedroom the bedroom to set
+     */
     public void setBedroom(Bedroom bedroom) {
         this.bedroom = bedroom;
     }
 
+    /**
+     * 
+     * @return the service
+     */
     public Service getService() {
         return service;
     }
 
+    /**
+     * 
+     * @param service the service to set
+     */
     public void setService(Service service) {
         this.service = service;
     }
 
+    /**
+     * 
+     * @return the patient
+     */
     public Patient getPatient() {
         return patient;
     }
 
+    /**
+     * 
+     * @param patient the patient to set
+     */
     public void setPatient(Patient patient) {
         this.patient = patient;
     }

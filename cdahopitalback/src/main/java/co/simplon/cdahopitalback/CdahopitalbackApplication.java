@@ -3,6 +3,9 @@ package co.simplon.cdahopitalback;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+/**
+ * @author Poteau Florian
+ */
 @SpringBootApplication
 public class CdahopitalbackApplication {
 
