@@ -44,7 +44,7 @@ public class Patient {
     private Date datearrivee;
 
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "datebortie_patient")
+    @Column(name = "datesortie_patient")
     private Date datesortie;
 
 }
