@@ -1,4 +1,4 @@
-package co.simplon.cdahopitalback.business.service;
+package co.simplon.cdahopitalback.business.service.Patient;
 
 import java.util.List;
 import java.util.Optional;
@@ -10,6 +10,7 @@ import co.simplon.cdahopitalback.business.convert.PatientConvert;
 import co.simplon.cdahopitalback.business.dto.PatientDTO;
 import co.simplon.cdahopitalback.persistance.entity.Patient;
 import co.simplon.cdahopitalback.persistance.repository.PatientRepository;
+import jakarta.persistence.EntityNotFoundException;
 
 /**
  * Implémentation du service pour la gestion des patients.
@@ -62,13 +63,26 @@ public class PatientServiceImpl implements PatientService {
      */
     @Override
     public PatientDTO putPatient(long id, PatientDTO patientDTO) {
-        Patient patient = PatientConvert.getInstance().convertDtoToEntity(patientDTO);
         Optional<Patient> optionalPatient = patientRepository.findById(id);
         if (optionalPatient.isPresent()) {
-            Patient savedPatient = patientRepository.save(patient);
-            return PatientConvert.getInstance().convertEntityToDto(savedPatient);
+            Patient existingPatient = optionalPatient.get();
+            existingPatient.setName(patientDTO.getName());
+            existingPatient.setFirstname(patientDTO.getFirstname());
+            existingPatient.setDatebirth(patientDTO.getDatebirth());
+            existingPatient.setDatearrivee(patientDTO.getDatearrivee());
+            existingPatient.setDatesortie(patientDTO.getDatesortie());
+            existingPatient.setNosecu(patientDTO.getNosecu());
+            existingPatient.setBed(patientDTO.getBedId());
+            existingPatient.setNotel(patientDTO.getNotel());
+            existingPatient.setSexe(patientDTO.getSexe());
+            existingPatient.setService(patientDTO.getServiceId());
+
+            Patient updatedPatient = patientRepository.save(existingPatient);
+
+            return PatientConvert.getInstance().convertEntityToDto(updatedPatient);
+        } else {
+            throw new EntityNotFoundException("Le patient n'existe pas " + id);
         }
-        return patientDTO;
     }
 
 }

@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import co.simplon.cdahopitalback.business.dto.PatientDTO;
-import co.simplon.cdahopitalback.business.service.PatientService;
+import co.simplon.cdahopitalback.business.service.Patient.PatientService;
 
 @RestController
 public class PostPatientController {

@@ -1,4 +1,4 @@
-package co.simplon.cdahopitalback.business.service;
+package co.simplon.cdahopitalback.business.service.Patient;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package co.simplon.cdahopitalback.business.service;
+package co.simplon.cdahopitalback.business.service.Bed;
 
 import java.util.List;
 import java.util.Optional;

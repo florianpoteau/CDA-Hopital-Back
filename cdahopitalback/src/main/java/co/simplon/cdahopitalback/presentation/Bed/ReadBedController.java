@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import co.simplon.cdahopitalback.business.dto.BedDTO;
-import co.simplon.cdahopitalback.business.service.BedService;
+import co.simplon.cdahopitalback.business.service.Bed.BedService;
 
 @RestController
 public class ReadBedController {
