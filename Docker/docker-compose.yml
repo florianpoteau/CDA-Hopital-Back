@@ -13,7 +13,6 @@ services:
       - "9254:3306"
     volumes:
       - datahopitaloflo:/var/lib/mysql
-      - ./:/docker-entrypoint-initdb.d
 volumes:
   datahopitaloflo:
     driver: local

@@ -34,28 +34,28 @@ id_bed int,
 foreign key(id_bed) REFERENCES bed(id_bed)
 );
 
-INSERT INTO `hopitaloflo`.`bedroom` (`id_bedroom`, `no_bedroom`) VALUES ('1', '201');
-INSERT INTO `hopitaloflo`.`bedroom` (`id_bedroom`, `no_bedroom`) VALUES ('2', '202');
-INSERT INTO `hopitaloflo`.`bedroom` (`id_bedroom`, `no_bedroom`) VALUES ('3', '251');
-INSERT INTO `hopitaloflo`.`bedroom` (`id_bedroom`, `no_bedroom`) VALUES ('4', '252');
-INSERT INTO `hopitaloflo`.`bedroom` (`id_bedroom`, `no_bedroom`) VALUES ('5', '1');
-INSERT INTO `hopitaloflo`.`bedroom` (`id_bedroom`, `no_bedroom`) VALUES ('6', '2');
-INSERT INTO `hopitaloflo`.`bedroom` (`id_bedroom`, `no_bedroom`) VALUES ('7', '51');
-INSERT INTO `hopitaloflo`.`bedroom` (`id_bedroom`, `no_bedroom`) VALUES ('8', '52');
+use hopitaloflo;
 
-INSERT INTO `hopitaloflo`.`bed` (`id_bed`, `id_bedroom`) VALUES ('1', '1');
-INSERT INTO `hopitaloflo`.`bed` (`id_bed`, `id_bedroom`) VALUES ('2', '2');
-INSERT INTO `hopitaloflo`.`bed` (`id_bed`, `id_bedroom`) VALUES ('3', '3');
-INSERT INTO `hopitaloflo`.`bed` (`id_bed`, `id_bedroom`) VALUES ('4', '4');
+INSERT INTO bedroom (id_bedroom, no_bedroom) VALUES (1, 1);
+INSERT INTO bedroom (id_bedroom, no_bedroom) VALUES (2, 2);
+INSERT INTO bedroom (id_bedroom, no_bedroom) VALUES (3, 51);
+INSERT INTO bedroom (id_bedroom, no_bedroom) VALUES (4, 52);
+INSERT INTO bedroom (id_bedroom, no_bedroom) VALUES (5, 52);
+INSERT INTO bedroom (id_bedroom, no_bedroom) VALUES (6, 53);
 
-INSERT INTO `hopitaloflo`.`service` (`id_service`, `name_service`) VALUES ('1', 'Urgence');
-INSERT INTO `hopitaloflo`.`service` (`id_service`, `name_service`) VALUES ('2', 'Chirurgie');
-INSERT INTO `hopitaloflo`.`service` (`id_service`, `name_service`) VALUES ('3', 'Pédiatrie');
-INSERT INTO `hopitaloflo`.`service` (`id_service`, `name_service`) VALUES ('4', 'Gynécologie');
+INSERT INTO bed (id_bed, id_bedroom) VALUES (1, 1);
+INSERT INTO bed (id_bed, id_bedroom) VALUES (2, 2);
+INSERT INTO bed (id_bed, id_bedroom) VALUES (3, 3);
+INSERT INTO bed (id_bed, id_bedroom) VALUES (4, 4);
+
+INSERT INTO service (id_service, name_service) VALUES (1, "Urgence");
+INSERT INTO service (id_service, name_service) VALUES (2, "Chirurgie");
+INSERT INTO service (id_service, name_service) VALUES (3, "Pédiatrie");
+INSERT INTO service (id_service, name_service) VALUES (4, "Gynécologie");
 
 INSERT INTO patient (id_patient, name_patient, firstname_patient, dateBirth_patient, sexe_patient, notel_patient, nosecu_patient, dateArrivee_patient, dateSortie_patient, id_service, id_bed) 
-VALUES (1, 'Poteau', 'Florian', '2001-05-23', 'Masculin', '634536374', '1236273627', NOW(), '2024-07-21', 1, 1);
+VALUES (1, "Poteau", "Florian", "2001-05-23", "Masculin", "634536374", "1236273627", NOW(), "2024-07-21", 1, 1);
 INSERT INTO patient (id_patient, name_patient, firstname_patient, dateBirth_patient, sexe_patient, notel_patient, nosecu_patient, dateArrivee_patient, dateSortie_patient, id_service, id_bed) 
-VALUES (2, 'Bor', 'Yoan', '1875-02-24', 'Féminin', '634536374', '1236273627', NOW(), '1877-01-12', 1, 2);
+VALUES (2, "Bor", "Yoan", "1875-02-24", "Féminin", "634536374", "1236273627", NOW(), "1877-01-12", 1, 2);
 INSERT INTO patient (id_patient, name_patient, firstname_patient, dateBirth_patient, sexe_patient, notel_patient, nosecu_patient, dateArrivee_patient, dateSortie_patient, id_service, id_bed) 
-VALUES (3, 'Alexandre', 'David', '2003-01-23', 'Masculin', '634536374', '1236273627', NOW(), '2024-01-12', 1, 3);
+VALUES (3, "Alexandre", "David", "2003-01-23", "Masculin", "634536374", "1236273627", NOW(), "2024-01-12", 1, 3);
