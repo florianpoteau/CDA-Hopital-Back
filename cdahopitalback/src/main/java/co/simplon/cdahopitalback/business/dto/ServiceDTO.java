@@ -1,5 +1,7 @@
 package co.simplon.cdahopitalback.business.dto;
 
+import java.util.List;
+
 public class ServiceDTO {
 
     private int id;

@@ -9,7 +9,7 @@ no_bedroom int
 
 CREATE TABLE IF NOT EXISTS bed(
 id_bed int primary key auto_increment,
-id_bedroom int,
+id_bedroom int NOT NULL,
 foreign key (id_bedroom) REFERENCES bedroom(id_bedroom)
 );
 

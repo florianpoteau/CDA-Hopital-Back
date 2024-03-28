@@ -13,9 +13,11 @@ import co.simplon.cdahopitalback.persistance.entity.Patient;
 @SpringBootTest
 class CdahopitalbackApplicationTests {
 
+	// test unitaire
 	@Test
 	public void testPatienCreation() {
 
+		// Je créé un nouveau patient
 		Patient patient = new Patient();
 
 		patient.setId(1);
@@ -28,8 +30,11 @@ class CdahopitalbackApplicationTests {
 		patient.setDatearrivee(new Date());
 		patient.setDatesortie(new Date());
 
+		// Vérifie si l'objet patient n'est pas null
 		assertNotNull(patient);
 
+		// Vérifie si les valeurs définit dans l'objet patient correspond aux valeur
+		// attendue
 		assertEquals(1, patient.getId());
 		assertEquals("Poteau", patient.getName());
 		assertEquals("Florian", patient.getFirstname());
