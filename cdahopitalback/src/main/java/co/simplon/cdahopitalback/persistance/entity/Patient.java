@@ -217,10 +217,18 @@ public class Patient {
         this.service = service;
     }
 
+    /**
+     * 
+     * @return the bed
+     */
     public Bed getBed() {
         return bed;
     }
 
+    /**
+     * 
+     * @param bed the bed to set
+     */
     public void setBed(Bed bed) {
         this.bed = bed;
     }

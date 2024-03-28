@@ -18,9 +18,9 @@ public class PostPatientController {
 
     /**
      * 
-     * @param patientService Le service de gestion des patients
+     * @param patientDTO the patientDTO
+     * @return new patient
      */
-
     @PostMapping("/patient")
     public PatientDTO postPatient(@RequestBody PatientDTO patientDTO) {
         return patientService.createPatient(patientDTO);

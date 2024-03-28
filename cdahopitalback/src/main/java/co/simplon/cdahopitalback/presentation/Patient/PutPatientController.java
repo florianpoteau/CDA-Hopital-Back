@@ -19,6 +19,12 @@ public class PutPatientController {
         this.patientService = patientService;
     }
 
+    /**
+     * 
+     * @param id         The ID of the patient to be modified
+     * @param patientDTO the patient modified
+     * @return patient modified
+     */
     @PutMapping("/patient/{id}")
     public PatientDTO putPatient(@PathVariable int id, @RequestBody PatientDTO patientDTO) {
         return patientService.putPatient(id, patientDTO);

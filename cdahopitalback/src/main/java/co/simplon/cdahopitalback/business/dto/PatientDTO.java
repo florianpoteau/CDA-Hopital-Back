@@ -19,14 +19,6 @@ public class PatientDTO {
     private Service serviceId;
     private Bed bedId;
 
-    public Bed getBedId() {
-        return bedId;
-    }
-
-    public void setBedId(Bed bedId) {
-        this.bedId = bedId;
-    }
-
     /**
      * 
      * @return the id
@@ -185,6 +177,22 @@ public class PatientDTO {
      */
     public void setServiceId(Service serviceId) {
         this.serviceId = serviceId;
+    }
+
+    /**
+     * 
+     * @return the bed
+     */
+    public Bed getBedId() {
+        return bedId;
+    }
+
+    /**
+     * 
+     * @param bedId the bed to set
+     */
+    public void setBedId(Bed bedId) {
+        this.bedId = bedId;
     }
 
 }
