@@ -39,9 +39,7 @@ public class BedConvert {
     public BedDTO convertEntityToDto(final Bed entity) {
         final BedDTO dto = new BedDTO();
         dto.setId(entity.getId());
-        dto.setPatientId(entity.getPatient());
         dto.setBedroomId(entity.getbedroom());
-        dto.setServiceId(entity.getService());
 
         return dto;
     }
@@ -56,8 +54,6 @@ public class BedConvert {
         final Bed bed = new Bed();
         bed.setId(entity.getId());
         bed.setBedroom(entity.getBedroomId());
-        bed.setPatient(entity.getPatientId());
-        bed.setService(entity.getServiceId());
 
         return bed;
     }

@@ -48,6 +48,8 @@ public class PatientConvert {
         dto.setSexe(entity.getSexe());
         dto.setNosecu(entity.getNosecu());
         dto.setNotel(entity.getNotel());
+        dto.setServiceId(entity.getService());
+        dto.setBedId(entity.getBed());
 
         return dto;
     }
@@ -69,6 +71,8 @@ public class PatientConvert {
         entity.setSexe(patient.getSexe());
         entity.setNosecu(patient.getNosecu());
         entity.setNotel(patient.getNotel());
+        entity.setService(patient.getServiceId());
+        entity.setBed(patient.getBedId());
 
         return entity;
     }

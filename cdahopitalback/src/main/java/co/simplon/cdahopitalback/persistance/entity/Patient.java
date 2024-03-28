@@ -7,6 +7,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -46,6 +48,14 @@ public class Patient {
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "datesortie_patient")
     private Date datesortie;
+
+    @ManyToOne
+    @JoinColumn(name = "id_service")
+    private Service service;
+
+    @ManyToOne
+    @JoinColumn(name = "id_bed")
+    private Bed bed;
 
     /**
      * 
@@ -189,5 +199,29 @@ public class Patient {
      */
     public void setDatesortie(Date datesortie) {
         this.datesortie = datesortie;
+    }
+
+    /**
+     * 
+     * @return the service
+     */
+    public Service getService() {
+        return service;
+    }
+
+    /**
+     * 
+     * @param service the service to set
+     */
+    public void setService(Service service) {
+        this.service = service;
+    }
+
+    public Bed getBed() {
+        return bed;
+    }
+
+    public void setBed(Bed bed) {
+        this.bed = bed;
     }
 }

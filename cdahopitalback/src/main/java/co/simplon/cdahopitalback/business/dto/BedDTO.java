@@ -1,14 +1,12 @@
 package co.simplon.cdahopitalback.business.dto;
 
 import co.simplon.cdahopitalback.persistance.entity.Patient;
-import co.simplon.cdahopitalback.persistance.entity.Service;
 import co.simplon.cdahopitalback.persistance.entity.Bedroom;
 
 public class BedDTO {
 
     private int id;
     private Bedroom bedroomId;
-    private Service serviceId;
     private Patient patientId;
 
     /**
@@ -41,22 +39,6 @@ public class BedDTO {
      */
     public void setBedroomId(Bedroom bedroomId) {
         this.bedroomId = bedroomId;
-    }
-
-    /**
-     * 
-     * @return the service
-     */
-    public Service getServiceId() {
-        return serviceId;
-    }
-
-    /**
-     * 
-     * @param serviceId the service to set
-     */
-    public void setServiceId(Service serviceId) {
-        this.serviceId = serviceId;
     }
 
     /**

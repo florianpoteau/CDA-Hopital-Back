@@ -2,6 +2,9 @@ package co.simplon.cdahopitalback.business.dto;
 
 import java.util.Date;
 
+import co.simplon.cdahopitalback.persistance.entity.Bed;
+import co.simplon.cdahopitalback.persistance.entity.Service;
+
 public class PatientDTO {
 
     private int id;
@@ -13,6 +16,16 @@ public class PatientDTO {
     private int nosecu;
     private Date datearrivee;
     private Date datesortie;
+    private Service serviceId;
+    private Bed bedId;
+
+    public Bed getBedId() {
+        return bedId;
+    }
+
+    public void setBedId(Bed bedId) {
+        this.bedId = bedId;
+    }
 
     /**
      * 
@@ -156,6 +169,22 @@ public class PatientDTO {
      */
     public void setDatesortie(Date datesortie) {
         this.datesortie = datesortie;
+    }
+
+    /**
+     * 
+     * @return the service
+     */
+    public Service getServiceId() {
+        return serviceId;
+    }
+
+    /**
+     * 
+     * @param serviceId the service to set
+     */
+    public void setServiceId(Service serviceId) {
+        this.serviceId = serviceId;
     }
 
 }
