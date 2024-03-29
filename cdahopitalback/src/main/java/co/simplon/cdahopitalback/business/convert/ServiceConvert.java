@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import co.simplon.cdahopitalback.business.dto.ServiceDTO;
-import co.simplon.cdahopitalback.persistance.entity.Service;
+import co.simplon.cdahopitalback.persistance.entity.Services;
 
 /**
  * Classe utilitaire pour la conversion entre les entités Service et les DTO
@@ -37,7 +37,7 @@ public class ServiceConvert {
      * @param entity L'entité Service à convertir.
      * @return Le DTO ServiceDTO correspondant à l'entité.
      */
-    public ServiceDTO convertEntityToDto(final Service entity) {
+    public ServiceDTO convertEntityToDto(final Services entity) {
         final ServiceDTO dto = new ServiceDTO();
         dto.setId(entity.getId());
         dto.setName(entity.getName());
@@ -51,8 +51,8 @@ public class ServiceConvert {
      * @param service Le DTO ServiceDTO à convertir.
      * @return L'entité Service correspondant au DTO.
      */
-    public Service convertDtoToEntity(final ServiceDTO service) {
-        final Service entity = new Service();
+    public Services convertDtoToEntity(final ServiceDTO service) {
+        final Services entity = new Services();
         entity.setId(service.getId());
         entity.setName(service.getName());
 
@@ -65,9 +65,9 @@ public class ServiceConvert {
      * @param listEntities La liste d'entités Service à convertir.
      * @return La liste de DTO ServiceDTO correspondante.
      */
-    public List<ServiceDTO> convertListEntityToListDto(final List<Service> listEntities) {
+    public List<ServiceDTO> convertListEntityToListDto(final List<Services> listEntities) {
         final List<ServiceDTO> listeDto = new ArrayList<>();
-        for (final Service entity : listEntities) {
+        for (final Services entity : listEntities) {
             listeDto.add(convertEntityToDto(entity));
         }
         return listeDto;
@@ -79,8 +79,8 @@ public class ServiceConvert {
      * @param listEntities La liste de DTO ServiceDTO à convertir.
      * @return La liste d'entités Service correspondante.
      */
-    public List<Service> convertListDtoToListEntity(final List<ServiceDTO> listEntities) {
-        final List<Service> listeDO = new ArrayList<>();
+    public List<Services> convertListDtoToListEntity(final List<ServiceDTO> listEntities) {
+        final List<Services> listeDO = new ArrayList<>();
         for (final ServiceDTO entity : listEntities) {
             listeDO.add(convertDtoToEntity(entity));
         }

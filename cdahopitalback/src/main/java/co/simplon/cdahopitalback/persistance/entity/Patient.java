@@ -54,7 +54,7 @@ public class Patient {
 
     @ManyToOne
     @JoinColumn(name = "id_service")
-    private Service service;
+    private Services service;
 
     @ManyToOne
     @JoinColumn(name = "id_bed")
@@ -208,7 +208,7 @@ public class Patient {
      * 
      * @return the service
      */
-    public Service getService() {
+    public Services getService() {
         return service;
     }
 
@@ -216,7 +216,7 @@ public class Patient {
      * 
      * @param service the service to set
      */
-    public void setService(Service service) {
+    public void setService(Services service) {
         this.service = service;
     }
 

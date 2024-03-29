@@ -7,9 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import co.simplon.cdahopitalback.business.convert.PatientConvert;
+import co.simplon.cdahopitalback.business.dto.AssignPatientToServiceDTO;
 import co.simplon.cdahopitalback.business.dto.PatientDTO;
 import co.simplon.cdahopitalback.persistance.entity.Patient;
+import co.simplon.cdahopitalback.persistance.entity.Services;
 import co.simplon.cdahopitalback.persistance.repository.PatientRepository;
+import co.simplon.cdahopitalback.persistance.repository.ServicesRepository;
+import co.simplon.cdahopitalback.presentation.Patient.AssignPatientToService;
 import jakarta.persistence.EntityNotFoundException;
 
 /**
@@ -19,6 +23,7 @@ import jakarta.persistence.EntityNotFoundException;
 public class PatientServiceImpl implements PatientService {
 
     private PatientRepository patientRepository;
+    private ServicesRepository serviceRepository;
 
     /**
      * Constructeur pour le service PatientServiceImpl.
@@ -26,8 +31,9 @@ public class PatientServiceImpl implements PatientService {
      * @param patientRepository Le repository des patients.
      */
     @Autowired
-    public PatientServiceImpl(PatientRepository patientRepository) {
+    public PatientServiceImpl(PatientRepository patientRepository, ServicesRepository serviceRepository) {
         this.patientRepository = patientRepository;
+        this.serviceRepository = serviceRepository;
     }
 
     /**
@@ -82,6 +88,28 @@ public class PatientServiceImpl implements PatientService {
             return PatientConvert.getInstance().convertEntityToDto(updatedPatient);
         } else {
             throw new EntityNotFoundException("Le patient n'existe pas " + id);
+        }
+    }
+
+    @Override
+    public PatientDTO assignPatientToService(AssignPatientToServiceDTO assignPatientToServiceDTO, int id_patient,
+            int id_service) {
+
+        Optional<Patient> optionalPatient = patientRepository.findById((long) id_patient);
+        if (optionalPatient.isPresent()) {
+            Optional<Services> optionalService = serviceRepository.findById((long) id_service);
+            if (optionalService.isPresent()) {
+                Patient existingPatient = optionalPatient.get();
+                existingPatient.setService(optionalService.get());
+
+                Patient updatedPatient = patientRepository.save(existingPatient);
+
+                return PatientConvert.getInstance().convertEntityToDto(updatedPatient);
+            } else {
+                throw new EntityNotFoundException("Le service avec l'identifiant " + id_service + " n'existe pas");
+            }
+        } else {
+            throw new EntityNotFoundException("Le patient avec l'identifiant " + id_patient + " n'existe pas");
         }
     }
 
