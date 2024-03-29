@@ -10,30 +10,35 @@ import co.simplon.cdahopitalback.business.dto.PatientDTO;
 public interface PatientService {
 
     /**
-     * Crée un nouveau patient à partir des informations fournies dans le DTO.
+     * Creates a new patient based on the information provided in the DTO.
      *
-     * @param patientDTO Les informations du patient à créer.
-     * @return Le DTO du patient créé.
+     * @param patientDTO The information of the patient to create.
+     * @return The DTO of the created patient.
      */
     PatientDTO createPatient(PatientDTO patientDTO);
 
     /**
-     * Récupère la liste de tous les patients.
+     * Retrieves the list of all patients.
      *
-     * @return La liste de tous les patients sous forme de DTO.
+     * @return The list of all patients in DTO format.
      */
     List<PatientDTO> getAllPatient();
 
     /**
-     * Met à jour les informations d'un patient existant.
+     * Updates the information of an existing patient.
      *
-     * @param id         L'identifiant du patient à mettre à jour.
-     * @param patientDTO Les nouvelles informations du patient.
-     * @return Le DTO du patient mis à jour.
+     * @param id         The identifier of the patient to update.
+     * @param patientDTO The new information of the patient.
+     * @return The DTO of the updated patient.
      */
     PatientDTO putPatient(long id, PatientDTO patientDTO);
 
-    PatientDTO assignPatientToService(int id_patient,
-            int id_service);
-
+    /**
+     * Assigns a patient to a service.
+     *
+     * @param id_patient The identifier of the patient.
+     * @param id_service The identifier of the service.
+     * @return The DTO of the assigned patient.
+     */
+    PatientDTO assignPatientToService(int id_patient, int id_service);
 }

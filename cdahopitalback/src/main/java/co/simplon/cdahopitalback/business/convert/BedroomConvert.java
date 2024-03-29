@@ -7,23 +7,22 @@ import co.simplon.cdahopitalback.business.dto.BedroomDTO;
 import co.simplon.cdahopitalback.persistance.entity.Bedroom;
 
 /**
- * Classe utilitaire pour la conversion entre les entités Bedroom et les DTO
- * BedroomDTO.
+ * Utility class for converting between Bedroom entities and BedroomDTOs.
  */
 public class BedroomConvert {
 
-    /** Instance unique de la classe BedroomConvert */
+    /** The singleton instance of the BedroomConvert class. */
     private static BedroomConvert instance;
 
-    /** Constructeur privé pour empêcher l'instanciation directe de la classe. */
+    /** Private constructor to prevent direct instantiation of the class. */
     private BedroomConvert() {
 
     }
 
     /**
-     * Obtient l'instance unique de la classe BedroomConvert.
+     * Gets the singleton instance of the BedroomConvert class.
      *
-     * @return L'instance unique de la classe BedroomConvert.
+     * @return The singleton instance of the BedroomConvert class.
      */
     public static BedroomConvert getInstance() {
         if (instance == null)
@@ -32,10 +31,10 @@ public class BedroomConvert {
     }
 
     /**
-     * Convertit une entité Bedroom en un DTO BedroomDTO.
+     * Converts a Bedroom entity to a BedroomDTO.
      *
-     * @param entity L'entité Bedroom à convertir.
-     * @return Le DTO BedroomDTO correspondant à l'entité.
+     * @param entity The Bedroom entity to convert.
+     * @return The corresponding BedroomDTO.
      */
     public BedroomDTO convertEntityToDto(final Bedroom entity) {
         final BedroomDTO dto = new BedroomDTO();
@@ -46,10 +45,10 @@ public class BedroomConvert {
     }
 
     /**
-     * Convertit un DTO BedroomDTO en une entité Bedroom.
+     * Converts a BedroomDTO to a Bedroom entity.
      *
-     * @param bedroom Le DTO BedroomDTO à convertir.
-     * @return L'entité Bedroom correspondant au DTO.
+     * @param bedroom The BedroomDTO to convert.
+     * @return The corresponding Bedroom entity.
      */
     public Bedroom convertDtoToEntity(final BedroomDTO bedroom) {
         final Bedroom entity = new Bedroom();
@@ -60,31 +59,31 @@ public class BedroomConvert {
     }
 
     /**
-     * Convertit une liste d'entités Bedroom en une liste de DTO BedroomDTO.
+     * Converts a list of Bedroom entities to a list of BedroomDTOs.
      *
-     * @param listEntities La liste d'entités Bedroom à convertir.
-     * @return La liste de DTO BedroomDTO correspondante.
+     * @param listEntities The list of Bedroom entities to convert.
+     * @return The corresponding list of BedroomDTOs.
      */
     public List<BedroomDTO> convertListEntityToListDto(final List<Bedroom> listEntities) {
-        final List<BedroomDTO> listeDto = new ArrayList<>();
+        final List<BedroomDTO> dtoList = new ArrayList<>();
         for (final Bedroom entity : listEntities) {
-            listeDto.add(convertEntityToDto(entity));
+            dtoList.add(convertEntityToDto(entity));
         }
-        return listeDto;
+        return dtoList;
     }
 
     /**
-     * Convertit une liste de DTO BedroomDTO en une liste d'entités Bedroom.
+     * Converts a list of BedroomDTOs to a list of Bedroom entities.
      *
-     * @param listEntities La liste de DTO BedroomDTO à convertir.
-     * @return La liste d'entités Bedroom correspondante.
+     * @param listEntities The list of BedroomDTOs to convert.
+     * @return The corresponding list of Bedroom entities.
      */
     public List<Bedroom> convertListDtoToListEntity(final List<BedroomDTO> listEntities) {
-        final List<Bedroom> listeDO = new ArrayList<>();
-        for (final BedroomDTO entity : listEntities) {
-            listeDO.add(convertDtoToEntity(entity));
+        final List<Bedroom> entityList = new ArrayList<>();
+        for (final BedroomDTO dto : listEntities) {
+            entityList.add(convertDtoToEntity(dto));
         }
-        return listeDO;
+        return entityList;
     }
 
 }

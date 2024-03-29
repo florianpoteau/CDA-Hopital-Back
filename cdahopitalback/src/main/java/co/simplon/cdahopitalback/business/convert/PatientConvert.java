@@ -7,23 +7,22 @@ import co.simplon.cdahopitalback.business.dto.PatientDTO;
 import co.simplon.cdahopitalback.persistance.entity.Patient;
 
 /**
- * Classe utilitaire pour la conversion entre les entités Patient et les DTO
- * PatientDTO.
+ * Utility class for converting between Patient entities and PatientDTOs.
  */
 public class PatientConvert {
 
-    /** Instance unique de la classe PatientConvert */
+    /** The singleton instance of the PatientConvert class. */
     private static PatientConvert instance;
 
-    /** Constructeur privé pour empêcher l'instanciation directe de la classe. */
+    /** Private constructor to prevent direct instantiation of the class. */
     private PatientConvert() {
 
     }
 
     /**
-     * Obtient l'instance unique de la classe PatientConvert.
+     * Gets the singleton instance of the PatientConvert class.
      *
-     * @return L'instance unique de la classe PatientConvert.
+     * @return The singleton instance of the PatientConvert class.
      */
     public static PatientConvert getInstance() {
         if (instance == null)
@@ -32,10 +31,10 @@ public class PatientConvert {
     }
 
     /**
-     * Convertit une entité Patient en un DTO PatientDTO.
+     * Converts a Patient entity to a PatientDTO.
      *
-     * @param entity L'entité Patient à convertir.
-     * @return Le DTO PatientDTO correspondant à l'entité.
+     * @param entity The Patient entity to convert.
+     * @return The corresponding PatientDTO.
      */
     public PatientDTO convertEntityToDto(final Patient entity) {
         final PatientDTO dto = new PatientDTO();
@@ -55,10 +54,10 @@ public class PatientConvert {
     }
 
     /**
-     * Convertit un DTO PatientDTO en une entité Patient.
+     * Converts a PatientDTO to a Patient entity.
      *
-     * @param patient Le DTO PatientDTO à convertir.
-     * @return L'entité Patient correspondant au DTO.
+     * @param patient The PatientDTO to convert.
+     * @return The corresponding Patient entity.
      */
     public Patient convertDtoToEntity(final PatientDTO patient) {
         final Patient entity = new Patient();
@@ -78,31 +77,31 @@ public class PatientConvert {
     }
 
     /**
-     * Convertit une liste d'entités Patient en une liste de DTO PatientDTO.
+     * Converts a list of Patient entities to a list of PatientDTOs.
      *
-     * @param listEntities La liste d'entités Patient à convertir.
-     * @return La liste de DTO PatientDTO correspondante.
+     * @param listEntities The list of Patient entities to convert.
+     * @return The corresponding list of PatientDTOs.
      */
     public List<PatientDTO> convertListEntityToListDto(final List<Patient> listEntities) {
-        final List<PatientDTO> listeDto = new ArrayList<>();
+        final List<PatientDTO> dtoList = new ArrayList<>();
         for (final Patient entity : listEntities) {
-            listeDto.add(convertEntityToDto(entity));
+            dtoList.add(convertEntityToDto(entity));
         }
-        return listeDto;
+        return dtoList;
     }
 
     /**
-     * Convertit une liste de DTO PatientDTO en une liste d'entités Patient.
+     * Converts a list of PatientDTOs to a list of Patient entities.
      *
-     * @param listEntities La liste de DTO PatientDTO à convertir.
-     * @return La liste d'entités Patient correspondante.
+     * @param listEntities The list of PatientDTOs to convert.
+     * @return The corresponding list of Patient entities.
      */
     public List<Patient> convertListDtoToListEntity(final List<PatientDTO> listEntities) {
-        final List<Patient> listeDO = new ArrayList<>();
-        for (final PatientDTO entity : listEntities) {
-            listeDO.add(convertDtoToEntity(entity));
+        final List<Patient> entityList = new ArrayList<>();
+        for (final PatientDTO dto : listEntities) {
+            entityList.add(convertDtoToEntity(dto));
         }
-        return listeDO;
+        return entityList;
     }
 
 }

@@ -7,23 +7,22 @@ import co.simplon.cdahopitalback.business.dto.ServiceDTO;
 import co.simplon.cdahopitalback.persistance.entity.Services;
 
 /**
- * Classe utilitaire pour la conversion entre les entités Service et les DTO
- * ServiceDTO.
+ * Utility class for converting between Service entities and ServiceDTOs.
  */
 public class ServiceConvert {
 
-    /** Instance unique de la classe ServiceConvert */
+    /** The singleton instance of the ServiceConvert class */
     private static ServiceConvert instance;
 
-    /** Constructeur privé pour empêcher l'instanciation directe de la classe. */
+    /** Private constructor to prevent direct instantiation of the class. */
     private ServiceConvert() {
 
     }
 
     /**
-     * Obtient l'instance unique de la classe ServiceConvert.
+     * Gets the singleton instance of the ServiceConvert class.
      *
-     * @return L'instance unique de la classe ServiceConvert.
+     * @return The singleton instance of the ServiceConvert class.
      */
     public static ServiceConvert getInstance() {
         if (instance == null)
@@ -32,10 +31,10 @@ public class ServiceConvert {
     }
 
     /**
-     * Convertit une entité Service en un DTO ServiceDTO.
+     * Converts a Service entity to a ServiceDTO.
      *
-     * @param entity L'entité Service à convertir.
-     * @return Le DTO ServiceDTO correspondant à l'entité.
+     * @param entity The Service entity to convert.
+     * @return The corresponding ServiceDTO.
      */
     public ServiceDTO convertEntityToDto(final Services entity) {
         final ServiceDTO dto = new ServiceDTO();
@@ -46,10 +45,10 @@ public class ServiceConvert {
     }
 
     /**
-     * Convertit un DTO ServiceDTO en une entité Service.
+     * Converts a ServiceDTO to a Service entity.
      *
-     * @param service Le DTO ServiceDTO à convertir.
-     * @return L'entité Service correspondant au DTO.
+     * @param service The ServiceDTO to convert.
+     * @return The corresponding Service entity.
      */
     public Services convertDtoToEntity(final ServiceDTO service) {
         final Services entity = new Services();
@@ -60,31 +59,31 @@ public class ServiceConvert {
     }
 
     /**
-     * Convertit une liste d'entités Service en une liste de DTO ServiceDTO.
+     * Converts a list of Service entities to a list of ServiceDTOs.
      *
-     * @param listEntities La liste d'entités Service à convertir.
-     * @return La liste de DTO ServiceDTO correspondante.
+     * @param listEntities The list of Service entities to convert.
+     * @return The corresponding list of ServiceDTOs.
      */
     public List<ServiceDTO> convertListEntityToListDto(final List<Services> listEntities) {
-        final List<ServiceDTO> listeDto = new ArrayList<>();
+        final List<ServiceDTO> dtoList = new ArrayList<>();
         for (final Services entity : listEntities) {
-            listeDto.add(convertEntityToDto(entity));
+            dtoList.add(convertEntityToDto(entity));
         }
-        return listeDto;
+        return dtoList;
     }
 
     /**
-     * Convertit une liste de DTO ServiceDTO en une liste d'entités Service.
+     * Converts a list of ServiceDTOs to a list of Service entities.
      *
-     * @param listEntities La liste de DTO ServiceDTO à convertir.
-     * @return La liste d'entités Service correspondante.
+     * @param listEntities The list of ServiceDTOs to convert.
+     * @return The corresponding list of Service entities.
      */
     public List<Services> convertListDtoToListEntity(final List<ServiceDTO> listEntities) {
-        final List<Services> listeDO = new ArrayList<>();
-        for (final ServiceDTO entity : listEntities) {
-            listeDO.add(convertDtoToEntity(entity));
+        final List<Services> entityList = new ArrayList<>();
+        for (final ServiceDTO dto : listEntities) {
+            entityList.add(convertDtoToEntity(dto));
         }
-        return listeDO;
+        return entityList;
     }
 
 }

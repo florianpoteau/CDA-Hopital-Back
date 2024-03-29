@@ -15,7 +15,7 @@ import co.simplon.cdahopitalback.persistance.repository.ServicesRepository;
 import jakarta.persistence.EntityNotFoundException;
 
 /**
- * Implémentation du service pour la gestion des patients.
+ * Implementation of the service for managing patients.
  */
 @Service
 public class PatientServiceImpl implements PatientService {
@@ -24,9 +24,9 @@ public class PatientServiceImpl implements PatientService {
     private ServicesRepository serviceRepository;
 
     /**
-     * Constructeur pour le service PatientServiceImpl.
+     * Constructor for the PatientServiceImpl service.
      *
-     * @param patientRepository Le repository des patients.
+     * @param patientRepository The repository for patients.
      */
     @Autowired
     public PatientServiceImpl(PatientRepository patientRepository, ServicesRepository serviceRepository) {
@@ -35,10 +35,10 @@ public class PatientServiceImpl implements PatientService {
     }
 
     /**
-     * Crée un nouveau patient à partir des informations fournies dans le DTO.
+     * Creates a new patient based on the information provided in the DTO.
      *
-     * @param patientDTO Les informations du patient à créer.
-     * @return Le DTO du patient créé.
+     * @param patientDTO The information of the patient to create.
+     * @return The DTO of the created patient.
      */
     @Override
     public PatientDTO createPatient(PatientDTO patientDTO) {
@@ -48,9 +48,9 @@ public class PatientServiceImpl implements PatientService {
     }
 
     /**
-     * Récupère la liste de tous les patients.
+     * Retrieves the list of all patients.
      *
-     * @return La liste de tous les patients sous forme de DTO.
+     * @return The list of all patients in DTO format.
      */
     @Override
     public List<PatientDTO> getAllPatient() {
@@ -59,11 +59,11 @@ public class PatientServiceImpl implements PatientService {
     }
 
     /**
-     * Met à jour les informations d'un patient existant.
+     * Updates the information of an existing patient.
      *
-     * @param id         L'identifiant du patient à mettre à jour.
-     * @param patientDTO Les nouvelles informations du patient.
-     * @return Le DTO du patient mis à jour.
+     * @param id         The identifier of the patient to update.
+     * @param patientDTO The new information of the patient.
+     * @return The DTO of the updated patient.
      */
     @Override
     public PatientDTO putPatient(long id, PatientDTO patientDTO) {
@@ -85,13 +85,19 @@ public class PatientServiceImpl implements PatientService {
 
             return PatientConvert.getInstance().convertEntityToDto(updatedPatient);
         } else {
-            throw new EntityNotFoundException("Le patient n'existe pas " + id);
+            throw new EntityNotFoundException("The patient does not exist: " + id);
         }
     }
 
+    /**
+     * Assigns a patient to a service.
+     *
+     * @param id_patient The identifier of the patient.
+     * @param id_service The identifier of the service.
+     * @return The DTO of the assigned patient.
+     */
     @Override
     public PatientDTO assignPatientToService(int id_patient, int id_service) {
-
         Optional<Patient> optionalPatient = patientRepository.findById((long) id_patient);
         if (optionalPatient.isPresent()) {
             Optional<Services> optionalService = serviceRepository.findById((long) id_service);
@@ -103,11 +109,10 @@ public class PatientServiceImpl implements PatientService {
 
                 return PatientConvert.getInstance().convertEntityToDto(updatedPatient);
             } else {
-                throw new EntityNotFoundException("Le service avec l'identifiant " + id_service + " n'existe pas");
+                throw new EntityNotFoundException("The service with id " + id_service + " does not exist");
             }
         } else {
-            throw new EntityNotFoundException("Le patient avec l'identifiant " + id_patient + " n'existe pas");
+            throw new EntityNotFoundException("The patient with id " + id_patient + " does not exist");
         }
     }
-
 }

@@ -7,22 +7,22 @@ import co.simplon.cdahopitalback.business.dto.BedDTO;
 import co.simplon.cdahopitalback.persistance.entity.Bed;
 
 /**
- * Classe utilitaire pour la conversion entre les entités Bed et le DTO BedDTO.
+ * Utility class for converting between Bed entities and BedDTOs.
  */
 public class BedConvert {
 
-    /** Instance unique de la classe BedConvert. */
+    /** The singleton instance of the BedConvert class. */
     private static BedConvert instance;
 
-    /** Constructeur privé pour empêcher l'instanciation directe de la classe. */
+    /** Private constructor to prevent direct instantiation of the class. */
     private BedConvert() {
 
     }
 
     /**
-     * Obtient l'instance unique de la classe BedConvert (singleton).
+     * Gets the singleton instance of the BedConvert class (singleton).
      *
-     * @return L'instance unique de la classe BedConvert.
+     * @return The singleton instance of the BedConvert class.
      */
     public static BedConvert getInstance() {
         if (instance == null)
@@ -31,10 +31,10 @@ public class BedConvert {
     }
 
     /**
-     * Convertit une entité Bed en un DTO BedDTO.
+     * Converts a Bed entity to a BedDTO.
      *
-     * @param entity L'entité Bed à convertir.
-     * @return Le DTO BedDTO correspondant à l'entité.
+     * @param entity The Bed entity to convert.
+     * @return The corresponding BedDTO.
      */
     public BedDTO convertEntityToDto(final Bed entity) {
         final BedDTO dto = new BedDTO();
@@ -45,10 +45,10 @@ public class BedConvert {
     }
 
     /**
-     * Convertit un DTO BedDTO en une entité Bed.
+     * Converts a BedDTO to a Bed entity.
      *
-     * @param entity Le DTO BedDTO à convertir.
-     * @return L'entité Bed correspondant au DTO.
+     * @param entity The BedDTO to convert.
+     * @return The corresponding Bed entity.
      */
     public Bed convertDtoToEntity(final BedDTO entity) {
         final Bed bed = new Bed();
@@ -59,31 +59,31 @@ public class BedConvert {
     }
 
     /**
-     * Convertit une liste d'entités Bed en une liste de DTO BedDTO.
+     * Converts a list of Bed entities to a list of BedDTOs.
      *
-     * @param listEntities La liste d'entités Bed à convertir.
-     * @return La liste de DTO BedDTO correspondante.
+     * @param listEntities The list of Bed entities to convert.
+     * @return The corresponding list of BedDTOs.
      */
     public List<BedDTO> convertListEntityToListDto(final List<Bed> listEntities) {
-        final List<BedDTO> listeDto = new ArrayList<>();
+        final List<BedDTO> dtoList = new ArrayList<>();
         for (final Bed entity : listEntities) {
-            listeDto.add(convertEntityToDto(entity));
+            dtoList.add(convertEntityToDto(entity));
         }
-        return listeDto;
+        return dtoList;
     }
 
     /**
-     * Convertit une liste de DTO BedDTO en une liste d'entités Bed.
+     * Converts a list of BedDTOs to a list of Bed entities.
      *
-     * @param listEntities La liste de DTO BedDTO à convertir.
-     * @return La liste d'entités Bed correspondante.
+     * @param listEntities The list of BedDTOs to convert.
+     * @return The corresponding list of Bed entities.
      */
     public List<Bed> convertListDtoToListEntity(final List<BedDTO> listEntities) {
-        final List<Bed> listeDO = new ArrayList<>();
-        for (final BedDTO entity : listEntities) {
-            listeDO.add(convertDtoToEntity(entity));
+        final List<Bed> entityList = new ArrayList<>();
+        for (final BedDTO dto : listEntities) {
+            entityList.add(convertDtoToEntity(dto));
         }
-        return listeDO;
+        return entityList;
     }
 
 }
