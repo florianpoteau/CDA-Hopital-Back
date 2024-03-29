@@ -42,5 +42,10 @@ public interface PatientService {
      */
     PatientDTO assignPatientToService(int id_patient, int id_service);
 
+    /**
+     * 
+     * @param id_patient the identifier of the patient
+     * @return The DTO of the patient after removing the service.
+     */
     PatientDTO removePatientFromService(int id_patient);
 }

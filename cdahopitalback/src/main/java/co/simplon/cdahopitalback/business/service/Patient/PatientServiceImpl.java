@@ -116,6 +116,12 @@ public class PatientServiceImpl implements PatientService {
         }
     }
 
+    /**
+     * Remove a patient from a service
+     *
+     * @param id_patient The identifier of the patient.
+     * @return The DTO of the assigned patient.
+     */
     @Override
     public PatientDTO removePatientFromService(int id_patient) {
 
