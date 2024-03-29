@@ -3,6 +3,7 @@
 ## Objectif
 
 L'objectif du projet est de créer une application de gestion des séjours des patients.
+Lien du trello : [https://trello.com/b/mzcEv3RI](https://trello.com/b/mzcEv3RI)
 
 ## Règles de gestion
 
@@ -15,7 +16,7 @@ L'objectif du projet est de créer une application de gestion des séjours des p
 
 ## Initialisation
 
-Tout d'abord, vous devez clone le repository avec cette commande :
+Tout d'abord, vous devez cloner le repository avec cette commande :
 
 ```bash
 git clone git@github.com:florianpoteau/CDA-Hopital-Back.git
@@ -37,9 +38,11 @@ Vous pourrez ensuite lancer le serveur Spring et tester l'api.
 
 Les endpoints disponibles seront:
 
-[http://localhost:8080/patient](http://localhost:8080/patient) pour get la liste de tous les patients
-[http://localhost:8080/patient](http://localhost:8080/patient) pour post un patient
-[http://localhost:8080/patient/{id}](http://localhost:8080/patient/{id}) pour modifier un patient
+[http://localhost:8080/patient](http://localhost:8080/patient) pour get la liste de tous les patients avec un GET
+[http://localhost:8080/patient](http://localhost:8080/patient) pour post un patient avec un POST
+[http://localhost:8080/patient/{id}](http://localhost:8080/patient/{id}) pour modifier un patient avec un PUT
+[http://localhost:8080/patient/{id_patient}/{id_service}](http://localhost:8080/patient/{id_patient}/{id_service}) pour attribuer un service à un patient avec un PUT
+[http://localhost:8080/patient/{id_patient}/removeService](http://localhost:8080/patient/{id_patient}/removeService) pour faire sortir un patient d'un service avec un PUT
 
 ## Requête SQL
 
