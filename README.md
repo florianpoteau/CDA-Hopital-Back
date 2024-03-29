@@ -39,9 +39,13 @@ Vous pourrez ensuite lancer le serveur Spring et tester l'api.
 Les endpoints disponibles seront:
 
 [http://localhost:8080/patient](http://localhost:8080/patient) pour get la liste de tous les patients avec un GET
+<br></br>
 [http://localhost:8080/patient](http://localhost:8080/patient) pour post un patient avec un POST
+<br></br>
 [http://localhost:8080/patient/{id}](http://localhost:8080/patient/{id}) pour modifier un patient avec un PUT
+<br></br>
 [http://localhost:8080/patient/{id_patient}/{id_service}](http://localhost:8080/patient/{id_patient}/{id_service}) pour attribuer un service à un patient avec un PUT
+<br></br>
 [http://localhost:8080/patient/{id_patient}/removeService](http://localhost:8080/patient/{id_patient}/removeService) pour faire sortir un patient d'un service avec un PUT
 
 ## Requête SQL
