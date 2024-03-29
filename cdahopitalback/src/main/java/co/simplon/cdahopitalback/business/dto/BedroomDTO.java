@@ -1,5 +1,8 @@
 package co.simplon.cdahopitalback.business.dto;
 
+/**
+ * Entity class representing a bedroomDTO in the hospital.
+ */
 public class BedroomDTO {
 
     private int id;

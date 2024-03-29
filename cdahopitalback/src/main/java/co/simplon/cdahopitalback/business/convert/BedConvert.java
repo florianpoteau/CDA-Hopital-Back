@@ -47,7 +47,7 @@ public class BedConvert {
     /**
      * Convertit un DTO BedDTO en une entité Bed.
      *
-     * @param dto Le DTO BedDTO à convertir.
+     * @param entity Le DTO BedDTO à convertir.
      * @return L'entité Bed correspondant au DTO.
      */
     public Bed convertDtoToEntity(final BedDTO entity) {

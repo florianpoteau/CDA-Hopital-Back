@@ -4,6 +4,9 @@ import java.util.List;
 
 import co.simplon.cdahopitalback.business.dto.PatientDTO;
 
+/**
+ * Service interface for managing patient-related operations.
+ */
 public interface PatientService {
 
     /**

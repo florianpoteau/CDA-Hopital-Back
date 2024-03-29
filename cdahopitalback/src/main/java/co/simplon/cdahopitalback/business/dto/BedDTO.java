@@ -3,6 +3,9 @@ package co.simplon.cdahopitalback.business.dto;
 import co.simplon.cdahopitalback.persistance.entity.Patient;
 import co.simplon.cdahopitalback.persistance.entity.Bedroom;
 
+/**
+ * Entity class representing a bedDTO in the hospital.
+ */
 public class BedDTO {
 
     private int id;

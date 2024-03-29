@@ -9,6 +9,9 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
+/**
+ * Entity class representing a bed in the hospital.
+ */
 @Entity
 @Table(name = "bed")
 public class Bed {

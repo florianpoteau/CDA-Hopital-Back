@@ -10,7 +10,7 @@ import co.simplon.cdahopitalback.business.dto.PatientDTO;
 import co.simplon.cdahopitalback.business.service.Patient.PatientService;
 
 /**
- * Contrôleur REST pour la gestion des patients.
+ * Controller class for handling HTTP GET requests related to patients.
  */
 @RestController
 public class ReadPatientController {
@@ -18,8 +18,9 @@ public class ReadPatientController {
     private final PatientService patientService;
 
     /**
-     * 
-     * @param patientService Le service de gestion des patients
+     * Constructs a new ReadPatientController with the specified PatientService.
+     *
+     * @param patientService The patient service to be used.
      */
     @Autowired
     public ReadPatientController(PatientService patientService) {

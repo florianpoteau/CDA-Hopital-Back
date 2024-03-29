@@ -13,6 +13,9 @@ import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 
+/**
+ * Entity class representing a patient in the hospital.
+ */
 @Entity
 @Table(name = "patient")
 public class Patient {

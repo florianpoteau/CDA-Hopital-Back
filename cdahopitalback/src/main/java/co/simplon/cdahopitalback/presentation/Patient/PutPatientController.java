@@ -9,11 +9,19 @@ import org.springframework.web.bind.annotation.RestController;
 import co.simplon.cdahopitalback.business.dto.PatientDTO;
 import co.simplon.cdahopitalback.business.service.Patient.PatientService;
 
+/**
+ * Controller class for handling HTTP PUT requests related to patients.
+ */
 @RestController
 public class PutPatientController {
 
     private final PatientService patientService;
 
+    /**
+     * Constructs a new PutPatientController with the specified PatientService.
+     *
+     * @param patientService The patient service to be used.
+     */
     @Autowired
     public PutPatientController(PatientService patientService) {
         this.patientService = patientService;

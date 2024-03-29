@@ -7,6 +7,9 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+/**
+ * Entity class representing a service in the hospital.
+ */
 @Entity
 @Table(name = "service")
 public class Service {

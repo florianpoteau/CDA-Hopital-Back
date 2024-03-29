@@ -5,6 +5,9 @@ import java.util.Date;
 import co.simplon.cdahopitalback.persistance.entity.Bed;
 import co.simplon.cdahopitalback.persistance.entity.Service;
 
+/**
+ * Entity class representing a patientDTO in the hospital.
+ */
 public class PatientDTO {
 
     private int id;
