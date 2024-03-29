@@ -115,4 +115,17 @@ public class PatientServiceImpl implements PatientService {
             throw new EntityNotFoundException("The patient with id " + id_patient + " does not exist");
         }
     }
+
+    @Override
+    public PatientDTO removePatientFromService(int id_patient) {
+
+        Optional<Patient> optionalPatient = patientRepository.findById((long) id_patient);
+        Patient patient = optionalPatient.get();
+        patient.setService(null);
+
+        Patient updatedPatient = patientRepository.save(patient);
+
+        return PatientConvert.getInstance().convertEntityToDto(updatedPatient);
+
+    }
 }

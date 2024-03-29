@@ -41,4 +41,6 @@ public interface PatientService {
      * @return The DTO of the assigned patient.
      */
     PatientDTO assignPatientToService(int id_patient, int id_service);
+
+    PatientDTO removePatientFromService(int id_patient);
 }
