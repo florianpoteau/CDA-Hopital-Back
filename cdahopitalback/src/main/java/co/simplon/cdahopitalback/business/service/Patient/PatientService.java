@@ -2,7 +2,6 @@ package co.simplon.cdahopitalback.business.service.Patient;
 
 import java.util.List;
 
-import co.simplon.cdahopitalback.business.dto.AssignPatientToServiceDTO;
 import co.simplon.cdahopitalback.business.dto.PatientDTO;
 
 /**
@@ -34,7 +33,7 @@ public interface PatientService {
      */
     PatientDTO putPatient(long id, PatientDTO patientDTO);
 
-    PatientDTO assignPatientToService(AssignPatientToServiceDTO assignPatientToServiceDto, int id_patient,
+    PatientDTO assignPatientToService(int id_patient,
             int id_service);
 
 }

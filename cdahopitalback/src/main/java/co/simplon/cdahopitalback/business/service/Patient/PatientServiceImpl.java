@@ -7,13 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import co.simplon.cdahopitalback.business.convert.PatientConvert;
-import co.simplon.cdahopitalback.business.dto.AssignPatientToServiceDTO;
 import co.simplon.cdahopitalback.business.dto.PatientDTO;
 import co.simplon.cdahopitalback.persistance.entity.Patient;
 import co.simplon.cdahopitalback.persistance.entity.Services;
 import co.simplon.cdahopitalback.persistance.repository.PatientRepository;
 import co.simplon.cdahopitalback.persistance.repository.ServicesRepository;
-import co.simplon.cdahopitalback.presentation.Patient.AssignPatientToService;
 import jakarta.persistence.EntityNotFoundException;
 
 /**
@@ -92,8 +90,7 @@ public class PatientServiceImpl implements PatientService {
     }
 
     @Override
-    public PatientDTO assignPatientToService(AssignPatientToServiceDTO assignPatientToServiceDTO, int id_patient,
-            int id_service) {
+    public PatientDTO assignPatientToService(int id_patient, int id_service) {
 
         Optional<Patient> optionalPatient = patientRepository.findById((long) id_patient);
         if (optionalPatient.isPresent()) {
