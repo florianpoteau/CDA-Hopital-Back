@@ -1,4 +1,4 @@
-package co.simplon.cdahopitalback;
+package co.simplon.cdahopitalback.TestUnitaire;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -11,7 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import co.simplon.cdahopitalback.persistance.entity.Patient;
 
 @SpringBootTest
-class CdahopitalbackApplicationTests {
+class CreatePatientTest {
 
 	// test unitaire
 	@Test
